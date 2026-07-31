@@ -1,0 +1,39 @@
+body{
+  font-family: Merriweacther Sans ;
+}
+.btn-brown {
+  background-color: #7a5230;
+  color: #ffffff;
+  border-color: #7a5230;
+}
+
+.btn-brown:hover, 
+.btn-brown:focus {
+  background-color: #5c3d24;
+  color: #ffffff;
+  border-color: #5c3d24;
+  box-shadow: 0 0 0 0.25rem rgba(122, 82, 48, 0.5);
+}
+
+button{
+    margin-right: 20px;
+}
+
+.navbar-nav{
+    margin: 0 auto;
+}
+
+.navbar{
+    
+    height: 50%;
+    
+}
+
+.blogs{
+justify-content: space-between;
+}
+
+.post-content{
+  display:flex;
+  justify-content:flex-start;
+}

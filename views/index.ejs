@@ -1,0 +1,107 @@
+<%- include("partials/header.ejs") %>
+
+<section class="container-fluid bg-primary mt-3 py-5 text-white">
+  <h1>Welcom to iwrite</h1>
+  <p>A place where to write , create and share your creativity with the world</p>
+</section>
+
+<section class="featured">
+<h1>FEATURED</h1>
+<div class="blogs d-flex mb-4 p-2" >
+
+<div class="blog-box card" style="width: 30rem;">
+<% if(locals.Thumbnail) { %>
+<div class="ratio ratio-4x3">
+<img class="card-img-top" src="<%= Thumbnail %>" alt="tech_blog" width="50%" height="50%">
+</div>
+
+<%  } else { %>
+ <div class="ratio ratio-4x3"> 
+<img class="card-img-top" src="assets/images/Tech-Blog.png" alt="tech_blog" width="50%" height="80%">
+ </div>
+<% } %>
+<div class="card-body">
+
+<% if (locals.blogTitle && locals.Author && locals.Content ) { %>
+
+<h2 class="card-title"><%= blogTitle %></h2>
+<h4>Created By <%= Author %></h4>
+<h4>Date : 01-Jun-2026</h4>
+
+<form action="/blogPost.ejs" method="post">
+  <input type="hidden" name="title" value="<%= blogTitle %>" />
+  <input type="hidden" name="author" value="<%= Author %>" />
+  <input type="hidden" name="thumbnail" value="<%= Thumbnail %>" />
+ <textarea name="content" hidden><%= Content %></textarea>
+  <button type="submit" class="btn btn-primary">VIEW</button>
+</form>
+<%  } else { %>
+
+<h2 class="card-title">Tech Blog</h2>
+<h4>Created By Kennedy</h4>
+<h4>Date : 01-Jun-2026</h4>
+
+<% const techContent = "Technology changes our daily lives fast, bringing new tools like artificial intelligence, smart home devices, and fast mobile networks.How Smart Tools Help UsEasy Work: New software helps people do hard tasks fast.Better Connection: Phones and internet let us talk to anyone instantly.Home Help: Smart lights and voice helpers make homes safe and cozy.What Comes NextThe future brings even more exciting changes. Computers are learning to think and see in new ways, helping us solve big problems in health, school, and travel. Technology is here to make life better for everyone." %>
+
+<form action="/blogPost.ejs" method="post">
+  <input type="hidden" name="title" value="Tech Blog" />
+  <input type="hidden" name="author" value="Kennedy" />
+  <input type="hidden" name="thumbnail" value="assets/images/Tech-Blog.png" />
+ <textarea name="content" hidden><%= techContent %></textarea>
+  <button type="submit" class="btn btn-primary">VIEW</button>
+</form>
+<% } %>
+
+</div>
+</div>
+
+<div class="blog-box card" style="width: 30rem;">
+<div class="ratio ratio-4x3">  
+<img class="card-img-top" src="assets/images/gaming_blog.png" alt="gaming_blog" width="50%" height="80%">
+</div>
+<div class="card-body">
+<h2 class="card-title">Game Blog</h2>
+<h4>Created By Kennedy</h4>
+<h4>Date : 01-Jun-2026</h4>
+
+<% const gameContent = "Gaming is more than a hobby; it builds problem-solving skills, connects people globally, and offers deep creative worlds.Why We Love GamesFun escape from daily life stressGreat tool to make online friendsTests our mind with complex puzzlesThe Power of PlayEvery time we pick up a controller or mouse, we start a new journey. Games let us be heroes, builders, and artists. They teach us how to try again when we fail. That is why gaming stays with us long after we turn off the screen." %>
+
+<form action="/blogPost.ejs" method="post">
+  <input type="hidden" name="title" value="Game Blog" />
+  <input type="hidden" name="author" value="Kennedy" />
+  <input type="hidden" name="thumbnail" value="assets/images/gaming_blog.png" />
+ <textarea name="content" hidden><%= gameContent %></textarea>
+  <button type="submit" class="btn btn-primary">VIEW</button>
+</form>
+</div>
+</div>
+
+<div class="blog-box card" style="width: 30rem;">
+<div class="ratio ratio-4x3">
+<img class="card-img-top" src="assets/images/travel_blog.png" alt="traveling_blog" width="50%" height="80%" >
+</div>
+<div class="card-body">
+<h2 class="card-title">Travel Blog</h2>
+<h4>Created By Kennedy</h4>
+<h4>Date : 01-Jun-2026</h4>
+
+<% const travelContent = "Travelling opens your mind, lets you see new places, and helps you meet wonderful people. This sample blog post shares a short story about a trip to the mountains, packing tips, and why you should take a break.Finding Peace in the MountainsLast month, I took a 4-day trip to the high green mountains. The air was cool and clean. I walked on small dirt paths and saw tall trees all around.Day 1: Arrived at the small wooden cabin at 2:00 PM. Went for a short 2-kilometer walk near the river.Day 2: Climbed up the main hill. It took 3 hours, but the view from the top was worth every step.Day 3: Visited a local village. I tried sweet warm bread that cost only $3.00.Simple Packing TipsDo not bring a heavy bag. Keep your items light and useful.Pack two pairs of good walking shoes.Bring a warm jacket for the cold night air.Always carry a full bottle of water and a map.Travel does not have to be far or cost a lot of money. Just step outside, find a new town, and enjoy your day!" %>
+
+<form action="/blogPost.ejs" method="post">
+  <input type="hidden" name="title" value="Travelling Blog" />
+  <input type="hidden" name="author" value="Kennedy" />
+  <input type="hidden" name="thumbnail" value="assets/images/travel_blog.png" />
+ <textarea name="content" hidden><%= travelContent %></textarea>
+  <button type="submit" class="btn btn-primary">VIEW</button>
+</form>
+
+
+</div>
+</div>
+
+
+</div>
+</section>
+
+<%- include("partials/footer.ejs") %>
+

@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<section class="mt-5" ">
+
+
+<div class="post-content">
+<img  src="<%= thumbImage %>" width="350px" height="350px" />
+
+<div class="post-text card">
+    <div class="card-title"><h1> <%= blogTitle %></h1></div>
+    <div class="card-body">
+    <div class="card-text">
+    <p><%= userContent %></p>
+    <h5>Created by <%= blogAuthor %></h5>
+    </div>
+    
+    </div>
+</div>
+
+</div>
+
+
+</section>
+
+<%- include("partials/footer.ejs") %>
